@@ -7,7 +7,7 @@
         </div>
 
         <div>
-          <label>Baths</label>
+          <label>Baths 1234</label>
           <input v-model.number="form.baths" type="text" />
         </div>
 
