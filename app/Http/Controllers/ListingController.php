@@ -12,6 +12,7 @@ class ListingController extends Controller
      */
     public function index()
     {
+        // dd(Listing::all());
         return inertia('Listing/Index',[
             'listings' => Listing::all()
         ]);
@@ -22,7 +23,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Listing/Create');
     }
 
     /**
@@ -30,7 +31,9 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd("dsfjbkgssdjhk");
+        Listing::create($request->all());
+        return redirect()->route('listing.index')->with('message','New Listing added');
     }
 
     /**
@@ -39,7 +42,7 @@ class ListingController extends Controller
     public function show(Listing $listing)
     {
         return inertia('Listing/Show',[
-            'listing' => $listingghj
+            'listing' => $listing
         ]);
     }
 
